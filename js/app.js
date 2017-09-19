@@ -1,12 +1,12 @@
 // Resize Menu
 $(document).on("scroll", function () {
-
-    if ($(document).scrollTop() > 20) {
-        $("header").removeClass("#desktop-nav").addClass("small");
-    } else {
-        $("header").removeClass("small").addClass("#desktop-nav");
+    if ($(window).width() > 400) {
+        if ($(document).scrollTop() > 20) {
+            $("header").removeClass("#desktop-nav").addClass("small");
+        } else {
+            $("header").removeClass("small").addClass("#desktop-nav");
+        }
     }
-
 });
 
 //Responsive menu
@@ -21,8 +21,9 @@ $(document).ready(function () {
 $(function () {
     $(window).scroll(function () {
         var currentScrollTop = $(window).scrollTop();
-        $('.blackOverlay').css('opacity', currentScrollTop / $('.blackOverlay').height());
-
+        if ($(window).width() > 568) {
+            $('.blackOverlay').css('opacity', currentScrollTop / $('.blackOverlay').height());
+        }
     });
 });
 
@@ -41,9 +42,11 @@ var topMenuHeight = topMenu.outerHeight();
 var menuItems = topMenu.find("a");
 
 scrollItems = menuItems.map(function () {
-    var item = $($(this).attr("href"));
-    if (item.length) {
-        return item;
+    if ($(window).width() > 568) {
+        var item = $($(this).attr("href"));
+        if (item.length) {
+            return item;
+        }
     }
 });
 
