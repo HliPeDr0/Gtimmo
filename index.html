@@ -290,7 +290,7 @@
       var map = new google.maps.Map(document.getElementById('map'), {
         scaleControl: true,
         center: gtimmo,
-        zoom: 15,
+        zoom: 12,
 
         styles: [
           {
@@ -410,7 +410,7 @@
       });
 
 
-      var marker = new google.maps.Marker({ map: map, position: gtimmo });
+      var marker = new google.maps.Marker({ map: map, position: gtimmo, icon:'./img/marker.png'});
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPdCfH6hy--0lOOdChZc2dIb9zP58tOJ4&callback=initMap" async
